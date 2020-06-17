@@ -1,8 +1,6 @@
 package com.example.integrationapp.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -10,18 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.example.integrationapp.R;
+import com.example.integrationapp.adapter.MoviesAdapter;
+import com.example.integrationapp.model.Movie;
 import com.example.integrationapp.rest.ApiClient;
 import com.example.integrationapp.rest.ApiInterface;
 
 import java.util.List;
 
-import info.androidhive.retrofit.R;
-import info.androidhive.retrofit.adapter.MoviesAdapter;
-import info.androidhive.retrofit.model.Movie;
-import info.androidhive.retrofit.model.MoviesResponse;
-import info.androidhive.retrofit.rest.ApiClient;
-import info.androidhive.retrofit.rest.ApiInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     // TODO - insert your themoviedb.org API KEY here
-    private final static String API_KEY = "";
+    private final static String API_KEY = "6dfe5ab01a76c164c8d2061aa76db17c";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,5 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
+    }
+
+    public class MoviesResponse {
     }
 }
